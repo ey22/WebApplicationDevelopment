@@ -7,7 +7,7 @@
         <title>Computer Component Order Form </title>
     </head>
     <body>
-        <!--Fonts, table lines, distances are edited-->
+        <!-- Fonts, table lines, distances are edited -->
         <style>
             #title,#subtitle,#data{
                 background-color:rgb(198, 176, 220);
@@ -88,7 +88,7 @@
                 margin-top: 30px;
             }
         </style>
-        <!--Creates table, buttons and fill in blanks, gives id to edit features of table data -->
+        <!-- Creates table, buttons and fill in blanks, gives id to edit features of table data -->
         <h1 id="title">COMPUTER COMPONENT ORDER FORM </h3>
         <table>
             <tr>
@@ -217,7 +217,7 @@
                 </td>
             </tr>
         </table>
-        <!--Creates a separate section for viewing the cart and delivery information. Gets input for delivery information-->
+        <!-- Creates a separate section for viewing the cart and delivery information. Gets input for delivery information -->
         <div id="order-summary">
             <h2 id="order-summary-title">MY CART</h2>
             <ul id="order-list"></ul>
@@ -239,10 +239,9 @@
             </div>
         </div>
         <script>
-            //When added to the cart, it saves information such as price and name to the array.
             var entries = [];
             var total=0;
-
+            // This function, which is called when the component is added to the cart, defines a variable for the component's properties such as price and quantity and adds it to the array.
             function addToCart(button){
                 var row = button.parentNode.parentNode;
                 var component = row.cells[0].innerText;
@@ -258,11 +257,13 @@
                     print(orderList);
                     document.getElementById("total").innerText = "Total: $" + total.toFixed(2);
                 }else {
+                    // Does not allow adding a product whose quantity is zero
                     alert("Please select a quantity greater than 0.");
                 }
             }
-            //When a component is requested to be deleted from the cart, it resets the array and adds the remaining items back.
+            // When a component is requested to be deleted from the cart, it resets the array and adds the remaining items back.
             function deleteFromCart(index){
+                // It does not require the $ sign to make operation.
                 var price = parseFloat(entries[index].split("$")[1]);
                 total = total - price;
                 entries.splice(index, 1);
@@ -271,7 +272,7 @@
                 print(orderList);
                 document.getElementById("total").innerText = "Total: $" + total.toFixed(2);
             }
-            //Creates delete button and returns and adds elements in array.
+            // Creates delete button and returns and adds elements in array.
             function print(orderList){
                 var entriesLength = entries.length;
                 for (let i = 0; i < entriesLength; i++) {
