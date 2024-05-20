@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="/Users/eylulgeyik/workspace/css/bootstrap.min.css"> 
+        <title>Computer Component Order Form </title>
+    </head>
+    <body>
+        <!--Fonts, table lines, distances are edited-->
+        <style>
+            #title,#subtitle,#data{
+                background-color:rgb(198, 176, 220);
+                font-weight: 200;
+            }
+            #button{
+                font-style: oblique;
+                background-color:rgb(198, 176, 220);
+                font-weight: 800;
+            }
+            table,th{
+                border-collapse: collapse;
+                border: 1px solid black;
+                padding:50px;
+            }
+            td{
+                border-collapse: collapse;
+                border: 1px solid black;
+                padding:25px;
+                padding-left: 50px;
+                font-weight: 200;
+            }
+            .price-cell {
+                align-items: center;
+                justify-content: space-between;
+            }
+            .price-cell button {
+                margin-left: 10px;
+            }
+            #order-summary {
+                position: absolute;
+                right: 0px;
+                top: 50px;
+                width: 600px;
+                background-color: rgb(176, 219, 220);
+                padding: 20px;
+                border-left: 1px solid black;
+            }
+            #order-summary h2 {
+                text-align: center;
+            }
+            #order-summary ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            #order-summary li {
+                margin-bottom: 10px;
+            }
+            #order-summary-title {
+                background-color:rgb(176, 219, 220);
+                font-weight: 200;
+            }
+            #submit{
+                position: relative;
+                margin-left: 250px;
+                width: 300px;
+                background-color:rgb(198, 176, 220);
+                padding: 20px;
+                border-collapse: collapse;
+                border: 1px solid black;
+            }
+            #textarea-name,#textarea-last-name{
+                width: 250px;
+                height: 30px;
+            }
+            #textarea-address{
+                width: 250px;
+                height: 100px;
+            }
+            #area-title{
+                width: 150px;
+                height: 20px;
+            }
+            .spaced-section {
+                margin-top: 50px;
+            }
+            .spaced-section-total {
+                margin-top: 30px;
+            }
+        </style>
+        <!--Creates table, buttons and fill in blanks, gives id to edit features of table data -->
+        <h1 id="title">COMPUTER COMPONENT ORDER FORM </h3>
+        <table>
+            <tr>
+                <th id="subtitle">COMPONENT</th>
+                <th id="subtitle">PIECE</th>
+                <th id="subtitle">PRICE</th>
+                <th id="subtitle"></th>
+            </tr>
+            <tr>
+                <td id="data">RAM-32GB</td>
+                <td id="data">
+                    <select>
+                        <option value=0> 0</option>
+                        <option value=1> 1</option>
+                        <option value=2> 2</option>
+                        <option value=3> 3</option>
+                        <option value=4> 4</option>
+                        <option value=5> 5</option>
+                    </select>
+                </td>
+                <td id="data" class="price-cell">$60</td>
+                <td id="button">
+                    <button type="button" class="btn btn-info btn-sm" onclick="addToCart(this)">Add to Cart</button>
+                </td>
+            </tr>
+            <tr>
+                <td id="data">RAM-16GB</td>
+                <td id="data">
+                    <select>
+                        <option value=0> 0</option>
+                        <option value=1> 1</option>
+                        <option value=2> 2</option>
+                        <option value=3> 3</option>
+                        <option value=4> 4</option>
+                        <option value=5> 5</option>
+                    </select>
+                </td>
+                <td id="data" class="price-cell">$33</td>
+                <td id="button">
+                    <button type="button" class="btn btn-info btn-sm" onclick="addToCart(this)">Add to Cart</button>
+                </td>
+            </tr>
+            <tr>
+                <td id="data">RAM-8GB</td>
+                <td id="data">
+                    <select>
+                        <option value=0> 0</option>
+                        <option value=1> 1</option>
+                        <option value=2> 2</option>
+                        <option value=3> 3</option>
+                        <option value=4> 4</option>
+                        <option value=5> 5</option>
+                    </select>
+                </td>
+                <td id="data" class="price-cell">$20</td>
+                <td id="button">
+                    <button type="button" class="btn btn-info btn-sm" onclick="addToCart(this)">Add to Cart</button>
+                </td>
+            </tr>
+            <tr>
+                <td id="data">SSD-1TB</td>
+                <td id="data">
+                    <select>
+                        <option value=0> 0</option>
+                        <option value=1> 1</option>
+                        <option value=2> 2</option>
+                        <option value=3> 3</option>
+                        <option value=4> 4</option>
+                        <option value=5> 5</option>
+                    </select>
+                </td>
+                <td id="data" class="price-cell">$100</td>
+                <td id="button">
+                    <button type="button" class="btn btn-info btn-sm" onclick="addToCart(this)">Add to Cart</button>
+                </td>
+            </tr>
+            <tr>
+                <td id="data">SSD-500GB</td>
+                <td id="data">
+                    <select>
+                        <option value=0> 0</option>
+                        <option value=1> 1</option>
+                        <option value=2> 2</option>
+                        <option value=3> 3</option>
+                        <option value=4> 4</option>
+                        <option value=5> 5</option>
+                    </select>
+                </td>
+                <td id="data" class="price-cell">$75</td>
+                <td id="button">
+                    <button type="button" class="btn btn-info btn-sm" onclick="addToCart(this)">Add to Cart</button>
+                </td>
+            </tr>
+            <tr>
+                <td id="data">KEYBOARD</td>
+                <td id="data">
+                    <select>
+                        <option value=0> 0</option>
+                        <option value=1> 1</option>
+                        <option value=2> 2</option>
+                        <option value=3> 3</option>
+                        <option value=4> 4</option>
+                        <option value=5> 5</option>
+                    </select>
+                </td>
+                <td id="data" class="price-cell">$25</td>
+                <td id="button">
+                    <button type="button" class="btn btn-info btn-sm" onclick="addToCart(this)">Add to Cart</button>
+                </td>
+            </tr>
+            <tr>
+                <td id="data">MOUSE</td>
+                <td id="data">
+                    <select>
+                        <option value=0> 0</option>
+                        <option value=1> 1</option>
+                        <option value=2> 2</option>
+                        <option value=3> 3</option>
+                        <option value=4> 4</option>
+                        <option value=5> 5</option>
+                    </select>
+                </td>
+                <td id="data" class="price-cell">$10</td>
+                <td id="button">
+                    <button type="button" class="btn btn-info btn-sm" onclick="addToCart(this)">Add to Cart</button>
+                </td>
+            </tr>
+        </table>
+        <!--Creates a separate section for viewing the cart and delivery information. Gets input for delivery information-->
+        <div id="order-summary">
+            <h2 id="order-summary-title">MY CART</h2>
+            <ul id="order-list"></ul>
+            <div id="total" class="spaced-section-total">Total: $0</div>
+            <div id="submit" class="spaced-section">
+                <h2 id="submit-title">DELIVERY INFORMATION</h2>
+                <label id="area-title">Your name</label>
+                <br>
+                <textarea id="textarea-name"></textarea>
+                <br>
+                <label id="area-title">Your last name</label>
+                <br>
+                <textarea id="textarea-last-name"></textarea>
+                <br>
+                <label id="area-title">Your address</label>
+                <br>
+                <textarea id="textarea-address"></textarea>
+                <button type="button" class="btn btn-success" onclick= "validation()">Submit</button>
+            </div>
+        </div>
+        <script>
+            //When added to the cart, it saves information such as price and name to the array.
+            var entries = [];
+            var total=0;
+
+            function addToCart(button){
+                var row = button.parentNode.parentNode;
+                var component = row.cells[0].innerText;
+                var price = parseFloat(row.querySelector(".price-cell").innerText.replace("$", " "));
+                var quantity = parseInt(row.querySelector("select").value);
+                var itemTotal = price * quantity;
+
+                if(quantity>0){
+                    var orderList = document.getElementById("order-list");
+                    orderList.innerHTML = " ";
+                    entries.push(" " + component + " - " + quantity + "pcs - $" + itemTotal.toFixed(2))
+                    total += itemTotal;
+                    print(orderList);
+                    document.getElementById("total").innerText = "Total: $" + total.toFixed(2);
+                }else {
+                    alert("Please select a quantity greater than 0.");
+                }
+            }
+            //When a component is requested to be deleted from the cart, it resets the array and adds the remaining items back.
+            function deleteFromCart(index){
+                var price = parseFloat(entries[index].split("$")[1]);
+                total = total - price;
+                entries.splice(index, 1);
+                var orderList = document.getElementById("order-list");
+                orderList.innerHTML = "";
+                print(orderList);
+                document.getElementById("total").innerText = "Total: $" + total.toFixed(2);
+            }
+            //Creates delete button and returns and adds elements in array.
+            function print(orderList){
+                var entriesLength = entries.length;
+                for (let i = 0; i < entriesLength; i++) {
+                    var br = document.createElement("br");
+                    var button = document.createElement("button");
+                    button.setAttribute("class","btn btn-info btn-danger");
+                    button.setAttribute("onclick",`deleteFromCart(${i})`);
+                    button.innerText="Delete";
+                    orderList.appendChild(br);
+                    orderList.appendChild(button);
+                    orderList.append(entries[i]);
+                }
+            }
+            //Checks that delivery information is not left blank.
+            function validation(){
+                if (document.getElementById("textarea-name").value.length == 0 || document.getElementById("textarea-last-name").value.length == 0 || document.getElementById("textarea-address").value.length==0){
+                    alert("Please fill in all blanks!");
+                }else{
+                    alert("Thank you! Your order has been received!");
+                    entries = [];
+                    var orderList = document.getElementById("order-list");
+                    orderList.innerHTML = " ";
+                    print(orderList);
+                    total = 0;
+                    document.getElementById("total").innerText = "Total: $0";
+                }
+            }
+        </script>
+    </body>
+</html>
